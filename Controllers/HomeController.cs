@@ -17,6 +17,16 @@ namespace E_Learning_Platforma.Controllers
     {
       return View();
     }
+    
+    //COURSES
+    // get all courses in index view page
+    [Authorize]
+    [HttpGet]
+    public IActionResult Courses()
+    {
+      var ListCourses = _courseservices.AllCourses();
+      return View(ListCourses);
+    }
    
 
     public IActionResult Error()
